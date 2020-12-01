@@ -6,11 +6,13 @@ import AuthProvider from "./lib/AuthProvider";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AnonRoute from "./components/AnonRoute";
+import PrivateRoute from "./components/PrivateRoute";
+
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./pages/Private";
-import AnonRoute from "./components/AnonRoute";
-import PrivateRoute from "./components/PrivateRoute";
+import EditProfile from "./pages/EditProfile";
 
 class App extends Component {
   render() {
@@ -22,7 +24,8 @@ class App extends Component {
           <Switch>
             <AnonRoute exact path="/signup" component={Signup} />
             <AnonRoute exact path="/login" component={Login} />
-            <PrivateRoute exact path="/private" component={Private} />
+            <PrivateRoute exact path="/profile" component={Private} />
+            <PrivateRoute exact path="/profile/:id/edit" component={EditProfile} />
           </Switch>
 
           <Footer />

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 
 class Signup extends Component {
-  state = { email: "", password: "" };
+  state = { username: "", email: "", password: "" };
 
   handleFormSubmit = async (event) => {
     event.preventDefault();
