@@ -5,6 +5,7 @@ import { Switch } from "react-router-dom";
 import AuthProvider from "./lib/AuthProvider";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./pages/Private";
@@ -23,6 +24,8 @@ class App extends Component {
             <AnonRoute exact path="/login" component={Login} />
             <PrivateRoute exact path="/private" component={Private} />
           </Switch>
+
+          <Footer />
         </div>
       </AuthProvider>
     );
