@@ -15,6 +15,7 @@ import Login from "./pages/Login";
 import Private from "./pages/Private";
 import EditProfile from "./pages/EditProfile";
 import SearchBooks from "./pages/SearchBooks";
+import BookDetails from "./pages/BookDetails";
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/books" component={SearchBooks} />
+            <Route exact path="/books/:id" component={BookDetails} />
             <AnonRoute exact path="/signup" component={Signup} />
             <AnonRoute exact path="/login" component={Login} />
             <PrivateRoute exact path="/profile" component={Private} />
