@@ -10,13 +10,13 @@ class BookDetails extends Component {
       theBook: {},
       okMessage: "",
       removedMessage: "",
-      /* allKindOfBooksList: [], */
+      BooksList: [], 
     };
   }
 
   componentDidMount() {
     this.getBook();
-    //this.getAllKindOfBooks();
+    this.getTheBooks();
   }
 
   getBook = () => {
@@ -35,14 +35,14 @@ class BookDetails extends Component {
       });
   };
 
- /*  getAllKindOfBooks = () => {
+ getTheBooks = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URI}/searchBooks/allkindofbooks`)
+      .get(`${process.env.REACT_APP_API_URI}/private/searchBooks/books`)
       .then((responseFrom) => {
-        this.setState({ allKindOfBooksList: responseFrom.data });
+        this.setState({ BooksList: responseFrom.data });
       })
       .catch((err) => console.error(err));
-  }; */
+  }; 
 
   addToList = (listName) => {
     const { params } = this.props.match;
@@ -54,14 +54,14 @@ class BookDetails extends Component {
 
     axios
       .post(
-        `${process.env.REACT_APP_API_URI}/books/${this.props.user._id}/push/${listName}`,
+        `${process.env.REACT_APP_API_URI}/private/books/${this.props.user._id}/push/${listName}`,
         bookObj,
         { withCredentials: true }
       )
       .then((responseFromApi) => {
-        console.log(responseFromApi);
+        console.log('response from adding', responseFromApi);
         this.setState({ okMessage: "Book Added" });
-        //this.getAllKindOfBooks();
+        this.getTheBooks();
       })
       .catch((err) => {
         console.log(err);
@@ -80,7 +80,7 @@ class BookDetails extends Component {
 
     axios
       .delete(
-        `${process.env.REACT_APP_API_URI}/books/${this.props.user._id}/pull/${listName}/${bookobjId}`,
+        `${process.env.REACT_APP_API_URI}/private/books/${this.props.user._id}/pull/${listName}/${bookobjId}`,
         { withCredentials: true }
       )
       .then((responseFromApi) => {
