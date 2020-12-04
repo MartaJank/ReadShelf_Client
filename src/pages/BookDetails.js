@@ -191,6 +191,7 @@ class BookDetails extends Component {
                   Delete Audiobook
                 </button>
               </div>
+              <p>{this.state.removedMessage}</p>
               <p>{this.state.okMessage}</p>
               <div className="list-btns-onelist">
                 <p className="btn-orient">ADD TO TRACKING</p>
@@ -217,7 +218,6 @@ class BookDetails extends Component {
                   className="add-to-list-btn"
                   onClick={() => this.removeFromList("pendingBooksAPI")}
                 >
-                  {" "}
                   Delete Pending
                 </button>
                 <button
