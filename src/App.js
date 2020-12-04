@@ -20,6 +20,9 @@ import BookDetails from "./pages/BookDetails";
 import BookshelfPaper from "./pages/BookshelfPaper";
 import BookshelfEbooks from "./pages/BookshelfEbooks";
 import BookshelfAudiobooks from "./pages/BookshelfAudiobooks";
+import TrackingPending from "./pages/TrackingPending";
+import TrackingRead from "./pages/TrackingRead";
+import TrackingProgress from "./pages/TrackingProgress";
 
 class App extends Component {
   render() {
@@ -54,6 +57,21 @@ class App extends Component {
               exact
               path="/bookshelf/audiobook"
               component={BookshelfAudiobooks}
+            />
+            <PrivateRoute
+              exact
+              path="/tracking/pending"
+              component={TrackingPending}
+            />
+            <PrivateRoute
+              exact
+              path="/tracking/read"
+              component={TrackingRead}
+            />
+            <PrivateRoute
+              exact
+              path="/tracking/progress"
+              component={TrackingProgress}
             />
           </Switch>
 
