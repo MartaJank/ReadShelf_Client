@@ -33,26 +33,6 @@ class EditProfile extends Component {
       });
   };
 
-  /* componentDidMount() {
-    this.getUser();
-  }
-
-  getUser = () => {
-    axios
-      .get(
-        `${process.env.REACT_APP_API_URI}/private/profile/${this.props.user._id}`
-      )
-      .then((response) => {
-          console.log('user response', response.data);
-        const theUser = response.data;
-        this.setState({
-          username: theUser.username,
-          email: theUser.email,
-          imageUrl: theUser.imageUrl,
-        });
-      });
-  }; */
-
   handleFormSubmit = (event) => {
     const username = this.state.username;
     const email = this.state.email;
