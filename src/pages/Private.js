@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 class Private extends Component {
   /* state = {
     user: {},
-  };
+  }; */
 
-  componentDidMount = () => {
+  /* componentDidMount = () => {
     axios
       .get(`${process.env.REACT_APP_API_URI}/private/profile/${this.props.user._id}`)
       .then((response) => {
@@ -16,7 +16,7 @@ class Private extends Component {
         this.setState({ user: response.data });
       })
       .catch((err) => console.error(err));
-  } */
+    } */
 
   render() {
     return (
@@ -51,6 +51,7 @@ class Private extends Component {
       </div>
     );
   }
+
 }
 
 export default withAuth(Private);

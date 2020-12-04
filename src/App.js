@@ -14,8 +14,12 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./pages/Private";
 import EditProfile from "./pages/EditProfile";
+
 import SearchBooks from "./pages/SearchBooks";
 import BookDetails from "./pages/BookDetails";
+import BookshelfPaper from "./pages/BookshelfPaper";
+import BookshelfEbooks from "./pages/BookshelfEbooks";
+import BookshelfAudiobooks from "./pages/BookshelfAudiobooks";
 
 class App extends Component {
   render() {
@@ -35,6 +39,21 @@ class App extends Component {
               exact
               path="/profile/:id/edit"
               component={EditProfile}
+            />
+            <PrivateRoute
+              exact
+              path="/bookshelf/paper"
+              component={BookshelfPaper}
+            />
+            <PrivateRoute
+              exact
+              path="/bookshelf/ebook"
+              component={BookshelfEbooks}
+            />
+            <PrivateRoute
+              exact
+              path="/bookshelf/audiobook"
+              component={BookshelfAudiobooks}
             />
           </Switch>
 
