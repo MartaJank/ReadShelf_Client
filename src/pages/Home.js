@@ -7,6 +7,7 @@ function Home() {
       <img
         className="home-cover"
         src="https://res.cloudinary.com/martajank/image/upload/v1598566162/Sin_t%C3%ADtulo_eqzfzu.png"
+        alt="home cover"
       />
       <div className="horitzontal-scroll">
         <ul className="hs">

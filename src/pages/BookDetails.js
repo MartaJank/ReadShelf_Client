@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 
 class BookDetails extends Component {
@@ -10,7 +9,7 @@ class BookDetails extends Component {
       theBook: {},
       okMessage: "",
       removedMessage: "",
-      BooksList: [], 
+      BooksList: [],
     };
   }
 
@@ -35,17 +34,17 @@ class BookDetails extends Component {
       });
   };
 
- getTheBooks = () => {
+  getTheBooks = () => {
     axios
       .get(`${process.env.REACT_APP_API_URI}/private/searchBooks/books`)
       .then((responseFrom) => {
         this.setState({ BooksList: responseFrom.data });
       })
       .catch((err) => console.error(err));
-  }; 
+  };
 
   addToList = (listName) => {
-    const { params } = this.props.match;
+    //const { params } = this.props.match;
     console.log("bookObj", this.state.theBook);
     const bookObj = {
       id: this.state.theBook.id,
@@ -59,7 +58,7 @@ class BookDetails extends Component {
         { withCredentials: true }
       )
       .then((responseFromApi) => {
-        console.log('response from adding', responseFromApi);
+        console.log("response from adding", responseFromApi);
         this.setState({ okMessage: "Book Added" });
         this.getTheBooks();
       })
@@ -69,7 +68,7 @@ class BookDetails extends Component {
   };
 
   removeFromList = (listName) => {
-    const { params } = this.props.match;
+    //const { params } = this.props.match;
     console.log("bookObj", this.state.theBook);
     const bookObj = {
       id: this.state.theBook.id,
@@ -123,8 +122,16 @@ class BookDetails extends Component {
                     : null}
                 </p>
                 <h6>DESCRIPTION</h6>
-                {console.log("description", this.state.theBook.volumeInfo.description)}
-                <p>{this.state.theBook.volumeInfo.description.replace(/<\/?[^>]+(>|$)/g, " ")}</p>
+                {console.log(
+                  "description",
+                  this.state.theBook.volumeInfo.description
+                )}
+                <p>
+                  {this.state.theBook.volumeInfo.description.replace(
+                    /<\/?[^>]+(>|$)/g,
+                    " "
+                  )}
+                </p>
                 <h6>YEAR</h6>
                 <p>{this.state.theBook.volumeInfo.publishedDate}</p>
                 <h6>PUBLISHING HOUSE</h6>
