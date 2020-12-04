@@ -23,6 +23,7 @@ import BookshelfAudiobooks from "./pages/BookshelfAudiobooks";
 import TrackingPending from "./pages/TrackingPending";
 import TrackingRead from "./pages/TrackingRead";
 import TrackingProgress from "./pages/TrackingProgress";
+import AddClub from "./pages/AddClub";
 
 class App extends Component {
   render() {
@@ -72,6 +73,11 @@ class App extends Component {
               exact
               path="/tracking/progress"
               component={TrackingProgress}
+            />
+            <PrivateRoute
+              exact
+              path="/book-clubs/club/add"
+              component={AddClub}
             />
           </Switch>
 
