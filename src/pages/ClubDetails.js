@@ -86,10 +86,7 @@ class ClubDetails extends Component {
     return (
       <div className="full-book">
         <div className="cover-part club">
-          <img
-            className="created-cover"
-            src={this.state.theClub.imageUrl}
-          />
+          <img className="created-cover" src={this.state.theClub.imageUrl} />
           <p className="rating">{this.state.theClub.currentBookTitle}</p>
         </div>
         <div className="info-part club">

@@ -49,6 +49,9 @@ class AddClub extends Component {
           meetingLink: "",
         });
       })
+      .then(() => {
+        this.props.history.push("/book-clubs");
+      })
       .catch((error) => console.log(error));
   };
 

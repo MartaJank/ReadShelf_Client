@@ -51,7 +51,6 @@ class Private extends Component {
       </div>
     );
   }
-
 }
 
 export default withAuth(Private);
