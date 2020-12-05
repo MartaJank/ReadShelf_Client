@@ -10,6 +10,7 @@ import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
 
 import Home from "./pages/Home";
+import faq from "./pages/faq";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./pages/Private";
@@ -26,6 +27,9 @@ import TrackingProgress from "./pages/TrackingProgress";
 
 import AddClub from "./pages/AddClub";
 import GetAllClubs from "./pages/GetAllClubs";
+import ClubDetails from "./pages/ClubDetails";
+import ClubEdit from "./pages/ClubEdit";
+import CreatedClubs from "./pages/CreatedClubs";
 
 class App extends Component {
   render() {
@@ -36,6 +40,7 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/faq" component={faq} />
             <Route exact path="/books" component={SearchBooks} />
             <Route exact path="/books/:id" component={BookDetails} />
             <Route exact path="/book-clubs" component={GetAllClubs} />
@@ -81,6 +86,21 @@ class App extends Component {
               exact
               path="/book-clubs/club/add"
               component={AddClub}
+            />
+            <PrivateRoute
+              exact
+              path="/book-clubs/:id"
+              component={ClubDetails}
+            />
+            <PrivateRoute
+              exact
+              path="/book-clubs/:id/edit"
+              component={ClubEdit}
+            />
+            <PrivateRoute
+              exact
+              path="/book-clubs/:id/created"
+              component={CreatedClubs}
             />
           </Switch>
 
