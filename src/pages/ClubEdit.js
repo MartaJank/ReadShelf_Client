@@ -160,7 +160,7 @@ class ClubEdit extends Component {
               onChange={(e) => this.handleChange(e)}
             />
             <input
-              className="form-input"
+              className="form-input file-upload"
               type="file"
               onChange={(e) => this.handleFileUpload(e)}
             />
