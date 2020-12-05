@@ -71,7 +71,7 @@ class ClubDetails extends Component {
     const { params } = this.props.match;
     axios
       .delete(
-        `${process.env.REACT_APP_API_URI}/private/book-clubs/${params.id}`
+        `${process.env.REACT_APP_API_URI}/private/book-clubs/${this.props.user._id}/delete/${params.id}`
       )
       .then(() => {
         this.props.history.push("/book-clubs");
@@ -133,7 +133,7 @@ class ClubDetails extends Component {
               <div>
                 <button
                   className="add-to-list-btn"
-                  onClick={() => this.joinClub()}
+                  onClick={(e) => this.joinClub(e)}
                 >
                   JOIN
                 </button>

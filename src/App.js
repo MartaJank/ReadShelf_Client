@@ -30,6 +30,7 @@ import GetAllClubs from "./pages/GetAllClubs";
 import ClubDetails from "./pages/ClubDetails";
 import ClubEdit from "./pages/ClubEdit";
 import CreatedClubs from "./pages/CreatedClubs";
+import JoinedClubs from "./pages/JoinedClubs";
 
 class App extends Component {
   render() {
@@ -101,6 +102,11 @@ class App extends Component {
               exact
               path="/book-clubs/:id/created"
               component={CreatedClubs}
+            />
+            <PrivateRoute
+              exact
+              path="/book-clubs/:id/joined"
+              component={JoinedClubs}
             />
           </Switch>
 
