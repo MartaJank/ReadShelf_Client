@@ -23,7 +23,9 @@ import BookshelfAudiobooks from "./pages/BookshelfAudiobooks";
 import TrackingPending from "./pages/TrackingPending";
 import TrackingRead from "./pages/TrackingRead";
 import TrackingProgress from "./pages/TrackingProgress";
+
 import AddClub from "./pages/AddClub";
+import GetAllClubs from "./pages/GetAllClubs";
 
 class App extends Component {
   render() {
@@ -36,6 +38,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/books" component={SearchBooks} />
             <Route exact path="/books/:id" component={BookDetails} />
+            <Route exact path="/book-clubs" component={GetAllClubs} />
             <AnonRoute exact path="/signup" component={Signup} />
             <AnonRoute exact path="/login" component={Login} />
             <PrivateRoute exact path="/profile" component={Private} />
