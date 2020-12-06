@@ -92,10 +92,13 @@ class AuthProvider extends React.Component {
 
   login = (user) => {
     const { email, password } = user;
-
+    console.log(password, email);
     auth
       .login({ email, password })
-      .then((user) => this.setState({ isLoggedin: true, user }))
+      .then((user) => {
+        console.log("clg de user en AuthProvider", user);
+        this.setState({ isLoggedin: true, user });
+      })
       .catch(({ response }) => {
         this.setState({
           message: {

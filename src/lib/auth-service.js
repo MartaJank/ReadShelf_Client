@@ -15,6 +15,7 @@ class Auth {
   }
 
   login({ email, password }) {
+    console.log(email, password, "login del service.js");
     return this.auth
       .post("/auth/login", { email, password })
       .then(({ data }) => data);
