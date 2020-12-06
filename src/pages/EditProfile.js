@@ -42,12 +42,13 @@ class EditProfile extends Component {
 
     console.log(this.props.user._id);
     axios
-      .patch(
+      .post(
         `${process.env.REACT_APP_API_URI}/private/profile/${this.props.user._id}/edit`,
         {
           username,
           email,
           imageUrl,
+          user: this.props.user
         },
         { withCredentials: true }
       )
